@@ -3,6 +3,12 @@
     padding: 0;
 }
 
+
+.container {
+    width: 1310px;
+    margin: 0 auto;
+}
+
 .stream {
     display: flex;
     flex-shrink: 0;
@@ -10,6 +16,7 @@
 }
 
 .stream__video {
+    position: relative;
     height: 540px;
     width: 960px;
 }
@@ -17,4 +24,12 @@
 .stream__chat {
     height: 540px;
     width: 350px;
+}
+
+.stream__tracker {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
 }
