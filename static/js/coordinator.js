@@ -1,4 +1,4 @@
-var HOST = 'http://51.158.181.156:3000';
+var HOST = 'wss://twitch.poplauhin.ru:443';
 
 function Socket() {
 	this.reconnect();
@@ -32,7 +32,7 @@ $(function () {
 	var $tracker = $('.js-tracking-percents');
 	var socket = new Socket();
 
-	$tracker.on('mousemove', function (e) {
+	$tracker.on('click', function (e) {
 		var offset = $tracker.offset();
 		var height = $tracker.height();
 		var width = $tracker.width();
