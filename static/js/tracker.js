@@ -1,3 +1,5 @@
+var HOST = 'http://51.158.181.156:3000';
+
 function Socket() {
 	this.reconnect();
 }
@@ -12,7 +14,7 @@ Socket.prototype = {
 	reconnect: function () {
 		this.socket && this.socket.close();
 
-		this.socket = io('http://127.0.0.1:3000', {
+		this.socket = io(HOST, {
 			transports: ['websocket']
 		});
 
