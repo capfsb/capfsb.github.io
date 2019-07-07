@@ -30,6 +30,7 @@ Socket.prototype = {
 
 $(function () {
 	var $tracker = $('.js-tracking-percents');
+	var $last = $('.js-last-click');
 	var socket = new Socket();
 
 	$tracker.on('click', function (e) {
@@ -43,6 +44,10 @@ $(function () {
 		var xPersent = (x / width).toFixed(6);
 		var yPersent = (y / height).toFixed(6);
 
+		var px = Math.round(xPersent * 1920);
+		var py = Math.round(yPersent * 1080);
+
+		$last.html('Last click: ' + px + ', ' + py + ' | Последний клик: ' + px + ', ' + py)
 
 		socket.sendCoordinates(xPersent, yPersent)
 	})
