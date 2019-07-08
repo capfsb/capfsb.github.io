@@ -33,7 +33,13 @@ $(function () {
 	var $last = $('.js-last-click');
 	var socket = new Socket();
 
+	$tracker.on('touchstart', function (e) {
+		e.preventDefault();
+	});
+
 	$tracker.on('click', function (e) {
+		e.preventDefault();
+
 		var offset = $tracker.offset();
 		var height = $tracker.height();
 		var width = $tracker.width();
